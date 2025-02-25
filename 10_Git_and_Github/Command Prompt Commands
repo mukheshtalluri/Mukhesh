@@ -1,0 +1,21 @@
+dir : dir - Shows list of files and folders in current directory.
+cd : cd D:\Target_path - Change the current directory from one location to other location.
+cls : cls - Clear the console.
+copy : copy filename target_path - Copy file from the one location to the other location.
+del : del filename - Delete file from the location.
+ren : ren old_filename new_filename - Rename the file
+mkdir : mkdir new_folder - Create the folder with the given name.
+rmdir : rmdir folder_name - Remove folder
+echo : echo file_name text - We can create the file using echo command and insert the text.
+exit : exit - Close the command prompt
+exit /b : exit /b - Exit from the batch script.
+type : type file name - Display content from the file.
+move : move filename change_directory - Move will move files from the one location to the anthor location.
+ipconfig : ipconfig - ipconfig will be provide the all configration details.
+tasklist : tasklist - List of process running currently.
+systeminfo : systeminfo - System info will provide the system information.
+shutdown : shutdown /s /t 60 - Show down the system after 60 sec.
+time : time - Time will display the current time.
+date : date - Date will display the current date.
+
+

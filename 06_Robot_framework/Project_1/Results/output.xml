@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.9 on win32)" generated="2025-02-18T07:21:19.505741" rpa="false" schemaversion="5">
+<suite id="s1" name="Database testing" source="D:\Python\06_Robot_framework\Project_1\Tests\Database_testing.robot">
+<test id="s1-t1" name="Verify successful creation of table" line="13">
+<kw name="Connect to DB">
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-02-18T07:21:19.537625" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-02-18T07:21:19.537625" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-02-18T07:21:19.547220" level="INFO">Connect to DB using : pymysql.connect(db='database-name', user='username', passwd=***, host='db4free.net', port=3306, charset='utf8mb4')</msg>
+<msg time="2025-02-18T07:21:20.032908" level="FAIL">OperationalError: (1044, "Access denied for user 'username'@'%' to database 'database-name'")</msg>
+<arg>pymysql</arg>
+<arg>${DBName}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPassword}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="FAIL" start="2025-02-18T07:21:19.537625" elapsed="0.495283">OperationalError: (1044, "Access denied for user 'username'@'%' to database 'database-name'")</status>
+</kw>
+<status status="FAIL" start="2025-02-18T07:21:19.537625" elapsed="0.495283">OperationalError: (1044, "Access denied for user 'username'@'%' to database 'database-name'")</status>
+</kw>
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<var>${output}</var>
+<arg>CREATE TABLE Persons (PersonID int, FirstName varchar(255), Address varchar(255), City varchar(255));</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<status status="NOT RUN" start="2025-02-18T07:21:20.032908" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-02-18T07:21:20.032908" elapsed="0.000000"/>
+</kw>
+<doc>This testcase verify user able to create database successfully</doc>
+<status status="FAIL" start="2025-02-18T07:21:19.537625" elapsed="0.495283">OperationalError: (1044, "Access denied for user 'username'@'%' to database 'database-name'")</status>
+</test>
+<test id="s1-t2" name="Verify data insertion in the table" line="19">
+<kw name="Execute Sql Script" owner="DatabaseLibrary">
+<msg time="2025-02-18T07:21:20.032908" level="FAIL">ValueError: No database connection is open.</msg>
+<var>${output}</var>
+<arg>./Resources/DBData/insert.sql</arg>
+<doc>Executes the content of the SQL script file loaded from `script_path` as SQL commands.</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.032908" elapsed="0.013265">ValueError: No database connection is open.</status>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-02-18T07:21:20.046173" elapsed="0.000000"/>
+</kw>
+<doc>This testcase verify user able to add data into the database</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.032908" elapsed="0.013265">ValueError: No database connection is open.</status>
+</test>
+<test id="s1-t3" name="Verify data update in the table" line="24">
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<msg time="2025-02-18T07:21:20.048740" level="FAIL">ValueError: No database connection is open.</msg>
+<var>${output}</var>
+<arg>UPDATE Persons SET FirstName = 'Mahesh' WHERE City = 'Bangalore';</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.048740" elapsed="0.000000">ValueError: No database connection is open.</status>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-02-18T07:21:20.051456" elapsed="0.000000"/>
+</kw>
+<doc>This testcase verify user able to update the data in table</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.048740" elapsed="0.002716">ValueError: No database connection is open.</status>
+</test>
+<test id="s1-t4" name="Verify certain record is present or not" line="29">
+<kw name="Check If Exists In Database" owner="DatabaseLibrary">
+<msg time="2025-02-18T07:21:20.053464" level="WARN">Keyword 'DatabaseLibrary.Check If Exists In Database' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-02-18T07:21:20.053464" level="FAIL">ValueError: No database connection is open.</msg>
+<arg>SELECT PersonID FROM Persons WHERE FirstName = 'Mahesh';</arg>
+<doc>*DEPRECATED* Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.053464" elapsed="0.000000">ValueError: No database connection is open.</status>
+</kw>
+<doc>This testcase verify the presence record in the database table</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.051456" elapsed="0.004015">ValueError: No database connection is open.</status>
+</test>
+<test id="s1-t5" name="Verify the table exist or not" line="33">
+<kw name="Table Must Exist" owner="DatabaseLibrary">
+<msg time="2025-02-18T07:21:20.055471" level="FAIL">ValueError: No database connection is open.</msg>
+<arg>Persons</arg>
+<doc>Check if the table with `table_name` exists in the database.</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.055471" elapsed="0.002004">ValueError: No database connection is open.</status>
+</kw>
+<doc>This testcase verify table exist in the database or not</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.055471" elapsed="0.002004">ValueError: No database connection is open.</status>
+</test>
+<test id="s1-t6" name="Verify the row count is 1" line="37">
+<kw name="Row Count Is Equal To X" owner="DatabaseLibrary">
+<msg time="2025-02-18T07:21:20.057475" level="WARN">Keyword 'DatabaseLibrary.Row Count Is Equal To X' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-02-18T07:21:20.057475" level="FAIL">ValueError: No database connection is open.</msg>
+<arg>SELECT PersonId FROM Persons WHERE City = 'Bangalore'</arg>
+<arg>1</arg>
+<doc>*DEPRECATED* Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.057475" elapsed="0.000000">ValueError: No database connection is open.</status>
+</kw>
+<doc>This testcase verify the row count in the table</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.057475" elapsed="0.000000">ValueError: No database connection is open.</status>
+</test>
+<test id="s1-t7" name="Verify user can delete the table" line="41">
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<msg time="2025-02-18T07:21:20.057475" level="FAIL">ValueError: No database connection is open.</msg>
+<var>${output}</var>
+<arg>DROP TABLE Persons;</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.057475" elapsed="0.000000">ValueError: No database connection is open.</status>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${output}</arg>
+<arg>None</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-02-18T07:21:20.057475" elapsed="0.000000"/>
+</kw>
+<kw name="Disconnect DB">
+<status status="NOT RUN" start="2025-02-18T07:21:20.057475" elapsed="0.000000"/>
+</kw>
+<doc>This testcase verify user able to delete table from the database</doc>
+<status status="FAIL" start="2025-02-18T07:21:20.057475" elapsed="0.000000">ValueError: No database connection is open.</status>
+</test>
+<doc>Database testing in the robot framework</doc>
+<status status="FAIL" start="2025-02-18T07:21:19.507747" elapsed="0.549728"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="7" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Database testing" id="s1" pass="0" fail="7" skip="0">Database testing</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-18T07:21:20.053464" level="WARN">Keyword 'DatabaseLibrary.Check If Exists In Database' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-02-18T07:21:20.057475" level="WARN">Keyword 'DatabaseLibrary.Row Count Is Equal To X' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+</errors>
+</robot>

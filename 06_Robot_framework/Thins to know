@@ -1,0 +1,22 @@
+Folder structure in the robot framework
+--> Library : Used for storing custom library.
+--> Resources : Writing reusable code and to maintain the page objects.
+--> Results : Where we can store the all the Results.
+--> Tests : To maintain test cases in that folder.
+
+
+File structure
+--> Settings : Documentation, Library
+--> Variables : Variables which are required for the test
+--> Testcases : All Testcases
+--> Keywords : Keywords required for the Testcases
+
+
+
+
+
+Commands:
+python -m robot -d Results Tests --> To run robot testcases
+python -m robot -d Results .\Tests\iframe.robot --> To run a specific file
+
+

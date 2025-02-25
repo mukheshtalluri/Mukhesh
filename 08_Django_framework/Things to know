@@ -1,0 +1,10 @@
+Create a django project
+--> python -m django startproject "project_name"
+
+Start django server
+navigate to project folder
+--> python manage.py runserver
+
+Create application
+--> python manage.py startapp "app_name"
+

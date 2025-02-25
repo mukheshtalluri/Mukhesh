@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.12.9 on win32)" generated="2025-02-19T08:30:08.667504" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="D:\Python\06_Robot_framework\Project_2\Tests">
+<suite id="s1-s1" name="01 Launch Application" source="D:\Python\06_Robot_framework\Project_2\Tests\01_launch_application.robot">
+<test id="s1-s1-t1" name="Verify use able to launch the application in maximise window and verify the page title" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:08.939140" level="INFO">Opening browser 'Chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-19T08:30:08.939140" elapsed="5.596555"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-19T08:30:14.535695" elapsed="0.036311"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${title_card}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-19T08:30:14.573002" elapsed="0.029447"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:14.605451" level="INFO">${page_title} = Automation Testing Practice</msg>
+<var>${page_title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-02-19T08:30:14.602449" elapsed="0.003002"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${page_title}</arg>
+<arg>Automation Testing Practice</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-02-19T08:30:14.606450" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-19T08:30:14.607236" elapsed="2.174747"/>
+</kw>
+<doc>This testcase verify the user able launch the maximise screen and verify the page title.</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-02-19T08:30:08.939140" elapsed="7.842843"/>
+</test>
+<test id="s1-s1-t2" name="Verify user able add the data into the textbox" line="25">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:16.787730" level="INFO">Opening browser 'Chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-19T08:30:16.787730" elapsed="5.389786"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.177516" elapsed="0.042904"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${title_card}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.220420" elapsed="0.037224"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:22.257644" level="INFO">Typing text 'Mukhesh' into text field 'name'.</msg>
+<arg>name</arg>
+<arg>Mukhesh</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.257644" elapsed="0.134289"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:22.409406" level="INFO">${name} = Mukhesh</msg>
+<var>${name}</var>
+<arg>name</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.391933" elapsed="0.017473"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:22.409406" level="INFO">The name textbox contain : Mukhesh</msg>
+<arg>The name textbox contain : ${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.409406" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:22.409406" level="INFO">Typing text ''mukhesh.t@gmail.com'' into text field 'email'.</msg>
+<arg>email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.409406" elapsed="0.178264"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:22.601082" level="INFO">${email} = 'mukhesh.t@gmail.com'</msg>
+<var>${email}</var>
+<arg>email</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.587670" elapsed="0.013412"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:22.601082" level="INFO">The email textbox contain : 'mukhesh.t@gmail.com'</msg>
+<arg>The email textbox contain : ${email}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.601082" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:22.601082" level="INFO">Typing text '1234567890' into text field 'phone'.</msg>
+<arg>phone</arg>
+<arg>1234567890</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.601082" elapsed="0.085844"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:22.707192" level="INFO">${phone} = 1234567890</msg>
+<var>${phone}</var>
+<arg>phone</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.686926" elapsed="0.020266"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:22.707192" level="INFO">The phone textbox contain : 1234567890</msg>
+<arg>The phone textbox contain : ${phone}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.707192" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:22.707192" level="INFO">Typing text '5-156, 
+Hoodi main road, 
+Tigarala palya, 
+Bangalore, 
+560067' into text field 'textarea'.</msg>
+<arg>textarea</arg>
+<arg>5-156, \nHoodi main road, \nTigarala palya, \nBangalore, \n560067</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.707192" elapsed="0.189846"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:23.066983" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="textbox.png"&gt;&lt;img src="textbox.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>textbox.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-19T08:30:22.897038" elapsed="0.169945"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-19T08:30:23.066983" elapsed="2.204906"/>
+</kw>
+<doc>This testcase verify user able to enter text in the textbox</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-02-19T08:30:16.787730" elapsed="8.485407"/>
+</test>
+<test id="s1-s1-t3" name="Verify user able to select the radio button" line="44">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:25.277228" level="INFO">Opening browser 'Chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-19T08:30:25.273137" elapsed="4.340250"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-19T08:30:29.613387" elapsed="0.027060"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${title_card}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-19T08:30:29.640447" elapsed="0.027005"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:29.670338" level="INFO">Clicking element 'male'.</msg>
+<arg>male</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:29.670338" elapsed="0.099414"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:29.957231" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="radiobutton.png"&gt;&lt;img src="radiobutton.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>radiobutton.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-19T08:30:29.769752" elapsed="0.187479"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-19T08:30:29.957231" elapsed="2.160664"/>
+</kw>
+<doc>This testcase verify the user able to successfully click on the radio button</doc>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-02-19T08:30:25.273137" elapsed="6.844758"/>
+</test>
+<test id="s1-s1-t4" name="Verify user able to select multiple checkbox" line="54">
+<kw name="Launch application">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:32.117895" level="INFO">Opening browser 'Chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-19T08:30:32.117895" elapsed="5.337598"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.455493" elapsed="0.046041"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${title_card}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.501534" elapsed="0.021293"/>
+</kw>
+<status status="PASS" start="2025-02-19T08:30:32.117895" elapsed="5.404932"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.527597" level="INFO">${list_of_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.41")&gt;, &lt;selenium.webdriv...</msg>
+<var>${list_of_elements}</var>
+<arg>xpath://input[@type = 'checkbox']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.522827" elapsed="0.004770"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.539358" level="INFO">${text} = sunday</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.527597" elapsed="0.011761"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:37.539358" level="INFO">sunday</msg>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.539358" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.539358" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.41")&gt;'.</msg>
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.539358" elapsed="0.078062"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.617420" level="INFO">Executing JavaScript:
+window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.41")&gt;'</msg>
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.617420" elapsed="0.010338"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.822142" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="checkbox.jpg"&gt;&lt;img src="checkbox.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-19T08:30:37.822142" level="INFO">C:\Users\mukhe\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\remote\webdriver.py:984: UserWarning: name used for saved screenshot does not match file type. It should end with a `.png` extension
+  return self.get_screenshot_as_file(filename)</msg>
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.627758" elapsed="0.194384"/>
+</kw>
+<status status="PASS" start="2025-02-19T08:30:37.539358" elapsed="0.282784"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:37.539358" elapsed="0.282784"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.41")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:37.527597" elapsed="0.294545"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.827240" level="INFO">${text} = monday</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.822142" elapsed="0.005098"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:37.827240" level="INFO">monday</msg>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.827240" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:37.827240" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:37.827240" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:37.827240" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:37.827240" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:37.827240" elapsed="0.000000"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.42")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:37.822142" elapsed="0.005098"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.837239" level="INFO">${text} = tuesday</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.827240" elapsed="0.009999"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:37.837239" level="INFO">tuesday</msg>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.837239" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:37.838365" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:37.838695" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:37.838695" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:37.837239" elapsed="0.001456"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:37.837239" elapsed="0.001456"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.43")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:37.827240" elapsed="0.011455"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.838695" level="INFO">${text} = wednesday</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.838695" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:37.838695" level="INFO">wednesday</msg>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.838695" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.838695" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.44")&gt;'.</msg>
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.838695" elapsed="0.069820"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:37.908515" level="INFO">Executing JavaScript:
+window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.44")&gt;'</msg>
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.908515" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.044997" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="checkbox.jpg"&gt;&lt;img src="checkbox.jpg" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-19T08:30:37.908515" elapsed="0.138490"/>
+</kw>
+<status status="PASS" start="2025-02-19T08:30:37.838695" elapsed="0.208310"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:37.838695" elapsed="0.208310"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.44")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:37.838695" elapsed="0.208310"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.081968" level="INFO">${text} = thursday</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.047005" elapsed="0.035966"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:38.082971" level="INFO">thursday</msg>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.082971" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.082971" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.082971" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.082971" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:38.082971" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:38.082971" elapsed="0.000000"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.45")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:38.047005" elapsed="0.035966"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.092090" level="INFO">${text} = friday</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.082971" elapsed="0.009119"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:38.092090" level="INFO">friday</msg>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.092090" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.092090" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.092090" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.092090" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:38.092090" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:38.092090" elapsed="0.000000"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.46")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:38.082971" elapsed="0.009119"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.097032" level="INFO">${text} = saturday</msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.092090" elapsed="0.004942"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:38.097032" level="INFO">saturday</msg>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.097032" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.097032" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.097032" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.097032" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:38.097032" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:38.097032" elapsed="0.000000"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.47")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:38.092090" elapsed="0.004942"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.106104" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.097032" elapsed="0.009072"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:38.106104" level="INFO"/>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.106104" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.57")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:38.097032" elapsed="0.009990"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.107022" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:38.107022" level="INFO"/>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.58")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:38.107022" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.117018" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.107022" elapsed="0.009996"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:38.117018" level="INFO"/>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.117018" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.117018" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.117018" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.117018" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:38.117018" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:38.117018" elapsed="0.000000"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.59")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:38.107022" elapsed="0.009996"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.123651" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.117018" elapsed="0.006633"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:38.124160" level="INFO"/>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.124160" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.124670" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.124670" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.124670" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:38.124670" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:38.124670" elapsed="0.000000"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.60")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:38.117018" elapsed="0.007652"/>
+</iter>
+<iter>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-02-19T08:30:38.130245" level="INFO">${text} = </msg>
+<var>${text}</var>
+<arg>${element}</arg>
+<arg>id</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.125679" elapsed="0.004566"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-02-19T08:30:38.130245" level="INFO"/>
+<arg>${text}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.130245" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${text}' == 'sunday' or '${text}' == 'wednesday'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.131247" elapsed="0.000000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<arg>window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - (window.innerHeight / 2), behavior: 'smooth'});</arg>
+<arg>ARGUMENTS</arg>
+<arg>${element}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.131247" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>checkbox.jpg</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-19T08:30:38.131247" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-02-19T08:30:38.131247" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-02-19T08:30:38.130245" elapsed="0.001002"/>
+</if>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="1433eb2a5b827997a84bfb978b344774", element="f.C1C5ED2D901C8FDBE33309D46E65BC04.d.0A08D4A26FCC365A474898984CED8145.e.61")&gt;</var>
+<status status="PASS" start="2025-02-19T08:30:38.124670" elapsed="0.006577"/>
+</iter>
+<var>${element}</var>
+<value>@{list_of_elements}</value>
+<status status="PASS" start="2025-02-19T08:30:37.527597" elapsed="0.603650"/>
+</for>
+<kw name="Close application">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-19T08:30:38.132246" elapsed="2.175741"/>
+</kw>
+<status status="PASS" start="2025-02-19T08:30:38.132246" elapsed="2.175741"/>
+</kw>
+<doc>This testcase verify user able to click on multiple checkbox</doc>
+<tag>Regression</tag>
+<status status="PASS" start="2025-02-19T08:30:32.117895" elapsed="8.190092"/>
+</test>
+<doc>Launch the automation blog spot application</doc>
+<status status="PASS" start="2025-02-19T08:30:08.687258" elapsed="31.620729"/>
+</suite>
+<status status="PASS" start="2025-02-19T08:30:08.667504" elapsed="31.640483"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="3" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat name="Tests" id="s1" pass="4" fail="0" skip="0">Tests</stat>
+<stat name="01 Launch Application" id="s1-s1" pass="4" fail="0" skip="0">Tests.01 Launch Application</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
