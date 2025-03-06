@@ -103,7 +103,7 @@ print(f"Exponent and assign to variable : {first_variable}")
 print(f"Logical expression for and : {first_variable == 0 and second_variable > 0}")
 
 # Or : If any one expression true in given statement it will return true.
-print(f"Logical expression for or : {first_variable == 0 and second_variable == 0}")
+print(f"Logical expression for or : {first_variable == 0 or second_variable == 0}")
 
 # Not : Not statement will return opposite to actual statement.
 print(f"Logical expression for not : {not first_variable == 0}")
@@ -115,7 +115,7 @@ first_variable = 7  # 111
 second_variable = 5 # 101
 print(f"Bit wise and operation : {first_variable and second_variable}") # 0101
 
-# Or (&) : Any one true then it will true.
+# Or (|) : Any one true then it will true.
 first_variable = 7  # 111
 second_variable = 5 # 101
 print(f"Bit wise or operation : {first_variable or second_variable}") # 0111

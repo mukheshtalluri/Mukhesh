@@ -1,0 +1,142 @@
+DataBase:
+    DataBase is Organised way to store data electronically and perform operation like create, retrieve, update, delete operations.
+
+Database Management System:
+    A special software program that helps users to create maintain databases
+    -> Manage lage amount of data
+    -> Handle securely
+    -> Concurrency
+    -> Import / Export data
+    -> Interact with the software programs
+    -> Backups
+
+CRUD Operations:
+    For any kind of databases CRUD operations are important
+    -> C : Create - create data into the database
+    -> R : Read - Read data from the database
+    -> U : Update - Update existing information
+    -> D : Delete - Delete Information from database
+
+Types of databases:
+    There are different types of databases are available based on requirement. In this we will discuss Relational databases and Non-Relational databases.
+
+Relational databases:
+    In Relational databases data organised in the one or more tables
+    -> Each table has rows and columns
+    -> A unique key identify each row
+
+Non - Relational databases:
+    In non-relational databases data is not stored in the form of tables
+    -> Key - Value pairs
+    -> Documents (xml, json..etc)
+    -> Graphs
+    -> Flexible tables
+
+Database queries:
+    Database queries are used to retrieve data from the database. After adding data day by day the database become more
+    complex we need a special software to perform operations. We will SQL to perform operations on database.
+
+Structured query language:
+    SQL is used to perform operations on the Relational databases.
+    -> Create and maintain operations on Relational databases using SQL.
+    -> We can perform CRUD operations on RDBMS using SQL.
+    -> Create and maintain database and database tables
+    -> Perform administration tasks (security, user management, import / export data)
+
+SQL and it components:
+    SQL is an hybrid language which consist of 4 different types languages
+    -> Data Query Language (DQL):
+        - Used to query the database for information
+        - Get information from the database which already stored
+
+    -> Data Definition Language (DDL):
+        - Used for defining database schemas
+
+    -> Data Control Language (DCL):
+        - Used to controlling the data access into the database
+        - User permission management
+
+    -> Data Manipulation Language (DML):
+        - Used for inserting, updating, deleting data from database.
+
+Primary key:
+    A unique way to identify data in the database tables. Primary key is always unique and it always has some value.
+
+Foreign key:
+    Foreign key will be primary key of anthor table. It will used to establish connection between the databases.
+
+Composite key:
+    Composite key will be formed by one or more rows in a table and it will be unique key.
+
+Data types:
+INT -> Int data type used to store whole numbers
+DECIMAL(M, N) -> To store decimal numbers Decimal numbers, Whole numbers
+VARCHAR(1) -> To store string text
+BLOB -> Binary large objects, Stores large data
+DATE -> 'YYYY-MM-DD'
+TIMESTAMP -> 'YYYY-MM-DD HH:MM:SS'
+
+Database Queries:
+Create database:
+    -> CREATE DATABASE my_database;
+
+Create table in database:
+    -> CREATE TABLE table_name (
+            id INT PRIMARY KEY,
+            first_name VARCHAR(250).
+            last_name VARCHAR(250)
+       );
+
+Describe about the table:
+    -> DESCRIBE table_name;
+
+Delete table from the database:
+    -> DROP TABLE table_name;
+
+Add new row to the table:
+    -> ALTER TABLE table_name ADD phone_no VARCHAR(13);
+
+Delete row from database table:
+    -> ALTER TABLE table_name DROP phone_no;
+
+Insert data into database table:
+    -> INSERT INTO table_name VALUES(1, 'Mukhesh', 'Talluri');
+
+Retrieve data from database table:
+    -> SELECT * FROM table_name;
+
+Insert data with few fields:
+    -> INSERT INTO table_name(id, first_name) VALUES(1, 'Jack');
+
+NOT NULL Constrain:
+    -> If any data need to be not null we will provide NOT NULL Constrain
+    -> first_name VARCHAR(20) NOT NULL;
+
+UNIQUE Constrain:
+    -> If any data need to be unique in table will use unique constrain
+    -> first_name VARCHAR(20) UNIQUE;
+
+DEFAULT Constrain:
+    -> Default constrain used to provide values if no value is provide
+    -> first_name VARCHAR(20) UNIQUE DEFAULT 'Mukhesh';
+
+AUTO_INCREMENT Constrain:
+    -> If any value need to be increased based on rows inserted to the table
+    -> id INT AUTO_INCREMENT;
+
+Update the database with new values:
+    -> UPDATE table_name SET Phone_no = '1234567890' WHERE phone_no = '0123456789';
+    -> UPDATE table_name SET first_name = 'Jack' WHERE id = 5;
+
+Delete data from the database:
+    -> DELETE FROM table_name WHERE id = 5;
+    -> DELETE FROM table_name WHERE first_name = 'Jack' OR first_name = 'Bob';
+
+
+
+
+
+
+
+
+

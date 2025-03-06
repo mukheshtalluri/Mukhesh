@@ -9,7 +9,7 @@ as web applications, mobile applications, gaming applications, machine learning,
 
 Unique properties of python:
 High level language - Human readable code
-Easy syntax - Mostly like a english language
+Easy syntax - Mostly like an english language
 Use cases - Python is used in various different fields
 Interpreted language - Python is Interpreted language debugging is easy
 

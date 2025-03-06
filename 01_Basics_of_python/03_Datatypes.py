@@ -23,7 +23,7 @@ print(f"Data type of sample integer : {type(sample_integer)}")
 print(f"Sample float : {sample_float}")
 print(f"Data type of sample float : {type(sample_float)}")
 
-# Text data - Text data will always embedded between either single or double quotes.
+# Text data - Text data will always embed between either single or double quotes.
 sample_string = "Bangalore"
 print(f"Sample string : {sample_string}")
 print(f"Data type of sample string : {type(sample_string)}")
